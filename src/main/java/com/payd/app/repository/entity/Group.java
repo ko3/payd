@@ -2,15 +2,15 @@ package com.payd.app.repository.entity;
 
 import java.util.List;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
+//import javax.persistence.Entity;
+//import javax.persistence.Id;
 
 import com.payd.app.controller.model.Member;
 
-@Entity
+//@Entity
 public class Group {
 	
-	@Id
+	//@Id
 	private Long guid;
 	
 	private Integer groupId;
