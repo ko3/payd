@@ -9,7 +9,7 @@ public class GroupRepositoryImpl implements GroupRepository{
 	
 	public Group getGroup(Integer groupId) {
 		Group group = new Group();
-		group.setGroupId(4365789);
+		group.setGroupId(groupId);
 		group.setGroupName("HJjgslkn");
 		group.setDescription("Hbfksgkjbdknlsd");
 		return group;
