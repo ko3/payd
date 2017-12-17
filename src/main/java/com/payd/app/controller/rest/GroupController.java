@@ -1,6 +1,7 @@
 package com.payd.app.controller.rest;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -16,10 +17,10 @@ public class GroupController {
 	@Autowired
 	private ResourceAssembler resourceAssembler;
 	
-	@RequestMapping(value = "/group", method = GET, produces = APPLICATION_JSON_VALUE)
-	public Group hello() {
+	@RequestMapping(value = "/group/{groupId}", method = GET, produces = APPLICATION_JSON_VALUE)
+	public Group hello(@PathVariable Integer groupId) {
 		
-		return resourceAssembler.getGroup();
+		return resourceAssembler.getGroup(groupId);
 	}
 
 }

@@ -13,8 +13,8 @@ public class ResourceAssembler {
 	private GroupRepository groupRepository;
 	
 	
-	public Group getGroup() {
-		com.payd.app.repository.entity.Group groupEntity = groupRepository.getGroup();
+	public Group getGroup(Integer groupId) {
+		com.payd.app.repository.entity.Group groupEntity = groupRepository.getGroup(groupId);
 		Group group = new Group();
 		group.setGroupId(groupEntity.getGroupId());
 		group.setGroupName(groupEntity.getGroupName());

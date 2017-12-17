@@ -7,7 +7,7 @@ import com.payd.app.repository.entity.Group;
 @Repository
 public class GroupRepositoryImpl implements GroupRepository{
 	
-	public Group getGroup() {
+	public Group getGroup(Integer groupId) {
 		Group group = new Group();
 		group.setGroupId(4365789);
 		group.setGroupName("HJjgslkn");
