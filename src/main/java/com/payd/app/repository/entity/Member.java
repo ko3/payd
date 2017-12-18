@@ -2,21 +2,25 @@ package com.payd.app.repository.entity;
 
 import java.time.LocalDate;
 
-//import javax.persistence.Entity;
-//import javax.persistence.Id;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 
 
-//@Entity
+@Entity
 public class Member {
 	
-	//@Id()
-	private Long guid;
+	//private Long guid;
 	private Integer memberId;
 	private String firstName;
 	private String lastName;
 	private String middleName;
 	private LocalDate dateOfBirth;
 	private String emailId;
+	private Employer employer;
+	
+	@Id
 	public Integer getMemberId() {
 		return memberId;
 	}
@@ -53,5 +57,14 @@ public class Member {
 	public void setEmail(String emailId) {
 		this.emailId = emailId;
 	}
-
+	
+	@ManyToOne
+	@JoinColumn(name="employer_Id",nullable = false)
+	public Employer getEmployer() {
+		return employer;
+	}
+	public void setEmployer(Employer employer) {
+		this.employer = employer;
+	}
+	
 }

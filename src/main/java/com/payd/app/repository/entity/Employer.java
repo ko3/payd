@@ -2,25 +2,27 @@ package com.payd.app.repository.entity;
 
 import java.util.List;
 
-//import javax.persistence.Entity;
-//import javax.persistence.Id;
+import javax.persistence.CascadeType;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.OneToMany;
 
-import com.payd.app.controller.model.Member;
 
-//@Entity
-public class Group {
+@Entity
+public class Employer {
 	
-	//@Id
-	private Long guid;
+	
+	//private Long guid;
 	
 	private Integer groupId;
 	
 	private String groupName;
 	
-	private String description;
+	private String groupDescription;
 	
 	private List<Member> membersList;
 	
+	@Id
 	public Integer getGroupId() {
 		return groupId;
 	}
@@ -33,12 +35,14 @@ public class Group {
 	public void setGroupName(String groupName) {
 		this.groupName = groupName;
 	}
-	public String getDescription() {
-		return description;
+	public String getGroupDescription() {
+		return groupDescription;
 	}
-	public void setDescription(String description) {
-		this.description = description;
+	public void setGroupDescription(String groupDescription) {
+		this.groupDescription = groupDescription;
 	}
+	
+	@OneToMany(mappedBy = "employer", cascade = CascadeType.ALL)
 	public List<Member> getMembersList() {
 		return membersList;
 	}

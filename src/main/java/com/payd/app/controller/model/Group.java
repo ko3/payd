@@ -1,13 +1,15 @@
 package com.payd.app.controller.model;
 
+import java.util.ArrayList;
 import java.util.List;
 
+@SuppressWarnings("unchecked")
 public class Group {
 	
 	private Integer groupId;
 	private String groupName;
 	private String description;
-	private List<Member> membersList;
+	private List<Member> membersList = new ArrayList();;
 	public Integer getGroupId() {
 		return groupId;
 	}

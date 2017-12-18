@@ -1,7 +1,11 @@
 package com.payd.app.repository;
 
-import com.payd.app.repository.entity.Group;
+import java.util.List;
 
-public interface GroupRepository {
-		Group getGroup(Integer groupId);
+import org.springframework.data.repository.CrudRepository;
+
+import com.payd.app.repository.entity.Employer;
+
+public interface GroupRepository extends CrudRepository<Employer, Integer>{
+	List<Employer> findByGroupName(String groupName);
 }
